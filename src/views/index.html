@@ -1,0 +1,17 @@
+<form action="/create">
+  <label>
+    <input type="text" name="url">
+  </label>
+  <button type="submit">Create short url</button>
+
+  <% if (locals.errorMessage) { %>
+  <p style="color: red">
+    <%= errorMessage %>
+  </p>
+  <% } %>
+
+  <% if (locals.id) { %>
+  <p><%= url.href %></p>
+  <p>Short URL: <a href="/<%= id %>"><%= id %></a></p>
+  <% } %>
+</form>
